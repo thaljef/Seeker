@@ -1,0 +1,10 @@
+#!/bin/bash -x
+
+while read r
+do
+	curl -X POST \
+	-H 'Content-Type: application/json' \
+	-H 'Authorization: Bearer 1234' \
+	-d '{"project":{"key":"$r","name":"$r","description":"","groupIds":[0]}}' \
+	'http://localhost:8082/rest/ui/projects'
+done
